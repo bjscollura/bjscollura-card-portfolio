@@ -1,4 +1,33 @@
 :root {
+    --coffee-primary: #3F2305;
+    --coffee-second: #F2EAD3;
+    --coffee-second-1: #F5F5F5;
+    --coffee-second-2: #DFD7BF;
+    --coffee-accent: #5f7b5d;
+    
+    --monokai-primary: #272822;
+    --monokai-second: #F8F8F2;
+    --monokai-second-1: #66D9EF;
+    --monokai-second-2: #75715E;
+    --monokai-accent: #F92672;
+    
+    --bluejean-primary: #F3F3F3;
+    --bluejean-second: #3A4750;
+    --bluejean-second-1: #686D76;
+    --bluejean-second-2: #303841;
+    --bluejean-accent: #2185D5;
+    
+    --nantucket-primary: #172239;
+    --nantucket-second: #CDDEFF;
+    --nantucket-second-1: #EEF2FF;
+    --nantucket-second-2: #676FA3;
+    --nantucket-accent: #FF5959;
+    
+    --limerickey-primary: #F7FFE5;
+    --limerickey-second: #A0C49D;
+    --limerickey-second-1: #536251;
+    --limerickey-second-2: #b7dfb3;
+    --limerickey-accent: #C9485B;
     
 }
 
@@ -9,4 +38,5 @@
 }
 html {
     font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
 }

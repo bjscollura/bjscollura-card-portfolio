@@ -83,6 +83,9 @@ button {
     }
     .links {
         grid-area: links;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
     .hero-text {
         font-family: 'Montserrat', sans-serif;
