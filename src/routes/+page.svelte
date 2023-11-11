@@ -23,14 +23,18 @@
     
     <div class="buttons">
     <!-- buttons -->
-        <button>Projects ></button>
-        <button>About Me ></button>
+        <button>Projects</button>
+        <button>About Me</button>
     </div>
     
     <div class="links">
     <!-- social links and resume -->
-        <button>in</button>
-        <button>github</button>
+        <button class='icon'>
+            <i class="fab fa-linkedin-in fa-lg" />
+        </button>
+        <button class='icon'>
+            <i class="fab fa-github fa-lg" />
+        </button>
         <button>Resume.pdf</button>
     </div>
 </div>
@@ -38,22 +42,6 @@
 <style>
 * {
     /* outline: 1px solid salmon; */
-}
-button {
-    display: inline-block;
-    border: none;
-    border-radius: 7px;
-    margin: 0;
-    padding: .8rem 1.6rem;
-    background: none;
-    font: inherit;
-    font-weight: 700;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 @media (orientation: portrait) {
     .page-wrapper {
@@ -80,22 +68,34 @@ button {
         grid-area: buttons;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: .8rem;
+        width: min(50vw, 300px);
+        margin: 0 auto;
+    }
+    .buttons > button {
+        width: 100%;
     }
     .links {
         grid-area: links;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        gap: 1rem;
+        margin-block-end: 5px;
     }
     .hero-text {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Josefin Sans', sans-serif;
         width: 1px;
+        line-height: 14vmin;
     }
     h1 {
         font-size: 12vmin;
+        color: var(--color-second);
     }
     h2 {
         font-size: 12vmin;
+        color: var(--color-accent);
     }
     
 }

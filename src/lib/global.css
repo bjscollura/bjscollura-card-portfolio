@@ -1,0 +1,115 @@
+:root {
+    --coffee-primary: #3D322C;
+    --coffee-second: #F2EAD3;
+    --coffee-second-1: #F5F5F5;
+    --coffee-second-2: #DFD7BF;
+    --coffee-accent: #99c296;
+    
+    --monokai-primary: #272822;
+    --monokai-second: #F8F8F2;
+    --monokai-second-1: #66D9EF;
+    --monokai-second-2: #75715E;
+    --monokai-accent: #F92672;
+    
+    --bluejean-primary: #F3F3F3;
+    --bluejean-second: #3A4750;
+    --bluejean-second-1: #686D76;
+    --bluejean-second-2: #303841;
+    --bluejean-accent: #2185D5;
+    
+    --nantucket-primary: #172239;
+    --nantucket-second: #CDDEFF;
+    --nantucket-second-1: #EEF2FF;
+    --nantucket-second-2: #676FA3;
+    --nantucket-accent: #FF5959;
+    
+    --limerickey-primary: #F7FFE5;
+    --limerickey-second: #A0C49D;
+    --limerickey-second-1: #536251;
+    --limerickey-second-2: #b7dfb3;
+    --limerickey-accent: #C9485B;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+body {
+    background-color: var(--color-bg, #fff);
+    color: var(--color-second, red);
+}
+button {
+    display: inline-block;
+    color: var(--color-bg);
+    border: 1px solid var(--color-second);
+    border-radius: 7px;
+    margin: 0;
+    padding: .8rem 1.2rem;
+    background: var(--color-second-2);
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+button.icon {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: var(--color-second)
+}
+.icon {
+    font-family: ;
+}
+.theme-bluejean {
+    --color-bg: var(--bluejean-primary);
+    --color-accent: var(--bluejean-accent);
+    --color-second: var(--bluejean-second);
+    --color-second-1: var(--bluejean-second-1);
+    --color-second-2: var(--bluejean-second-2);
+}
+.theme-monokai {
+    --color-bg: var(--monokai-primary);
+    --color-accent: var(--monokai-accent);
+    --color-second: var(--monokai-second);
+    --color-second-1: var(--monokai-second-1);
+    --color-second-2: var(--monokai-second-2);
+}
+.theme-coffee {
+    --color-bg: var(--coffee-primary);
+    --color-accent: var(--coffee-accent);
+    --color-second: var(--coffee-second);
+    --color-second-1: var(--coffee-second-1);
+    --color-second-2: var(--coffee-second-2);
+}
+.theme-limerickey {
+    --color-bg: var(--limerickey-primary);
+    --color-accent: var(--limerickey-accent);
+    --color-second: var(--limerickey-second);
+    --color-second-1: var(--limerickey-second-1);
+    --color-second-2: var(--limerickey-second-2);
+}
+.theme-nantucket {
+    --color-bg: var(--nantucket-primary);
+    --color-accent: var(--nantucket-accent);
+    --color-second: var(--nantucket-second);
+    --color-second-1: var(--nantucket-second-1);
+    --color-second-2: var(--nantucket-second-2);
+}
