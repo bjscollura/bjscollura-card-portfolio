@@ -142,10 +142,10 @@ h2 {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: .8rem;
+        gap: 1.5rem;
         /* margin-block-end: 3rem; */
         margin-inline: auto;
-        width: max(30vw, 500px);
+        width: max(30vw, 332px);
     }
     .buttons > button {
         width: 100%;
