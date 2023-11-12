@@ -42,8 +42,8 @@ html {
     
 }
 body {
-    background-color: var(--color-bg, #fff);
-    color: var(--color-second, red);
+    background-color: var(--color-bg, #ddd);
+    color: var(--color-second, #333);
 }
 button {
     display: inline-block;

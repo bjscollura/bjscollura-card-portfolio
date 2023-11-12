@@ -1,3 +1,7 @@
+<script>
+    import ThemePicker from "$lib/ThemePicker.svelte";
+</script>
+
 <svelte:head>
     <title>Brian Collura</title>
 </svelte:head>
@@ -29,6 +33,7 @@
     
     <div class="links">
     <!-- social links and resume -->
+        <ThemePicker />
         <button class='icon'>
             <i class="fab fa-linkedin-in fa-lg" />
         </button>
@@ -40,8 +45,14 @@
 </div>
 
 <style>
-* {
-    /* outline: 1px solid salmon; */
+/* * {
+    outline: 1px solid salmon;
+} */
+h1 {
+    color: var(--color-second);
+}
+h2 {
+    color: var(--color-accent);
 }
 @media (orientation: portrait) {
     .page-wrapper {
@@ -91,16 +102,76 @@
     }
     h1 {
         font-size: 12vmin;
-        color: var(--color-second);
     }
     h2 {
         font-size: 12vmin;
-        color: var(--color-accent);
     }
     
 }
 @media (orientation: landscape) {
-
+    .page-wrapper {
+        display: grid;
+        grid-template-areas:
+        /* ". . links links"
+        ". . . ."
+        "brian brian . ."
+        "description description . ."
+        ". . . ."
+        ". buttons buttons ."
+        ". . . ."; */
+        "links"
+        "."
+        "brian"
+        "description"
+        "."
+        "buttons"
+        ".";
+        grid-template-rows: auto 2fr auto auto 3fr auto .7fr;
+        /* grid-template-columns: 1.6fr 1.6fr 1fr 1fr; */
+        height: 100vh;
+        margin-inline: .5rem;
+    }
+    .brian {
+        grid-area: brian;
+    }
+    .description {
+        grid-area: description;
+    }
+    .buttons {
+        grid-area: buttons;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: .8rem;
+        /* margin-block-end: 3rem; */
+        margin-inline: auto;
+        width: max(30vw, 500px);
+    }
+    .buttons > button {
+        width: 100%;
+    }
+    .links {
+        grid-area: links;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-block-start: 1rem;
+        margin-inline-end: .5rem;
+    }
+    .hero-text {
+        /* width: 1px; */
+        line-height: min(160px, 8vmax);
+    }
+    h1 {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: min(140px, 7vmax);
+    }
+    h2 {
+        /* font-family: 'Tangerine', cursive; */
+        font-weight: 700;
+        font-size: min(100px, 5vmax);
+    }
 }
 
 </style>
