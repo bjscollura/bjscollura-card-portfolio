@@ -1,5 +1,10 @@
 <script>
     import Dice from "$lib/Dice.svelte";
+    
+    let props = {
+        displayNumber: 5,
+        themeName: "Nantucket"
+    };
 
     let themeArray = ["BlueJean","Monokai","Coffee","LimeRickey","Nantucket"];
     function changeTheme() {
@@ -12,24 +17,27 @@
         }
         document.body.className = '';
         document.body.classList.add(newTheme);
+        
+        props.displayNumber = randNum + 1; //change number for Dice.svelte to display, base 1 vs base 0
+        props.themeName = themeArray[randNum];
     }
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div on:click={changeTheme}>
-    <Dice />
+    <svelte:component this={Dice} {...props} />
 </div>
 
 <style>
-p {
-    color: var(--color-accent)
-}
-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-    /* outline: 1px solid red; */
-}
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+        /* outline: 1px solid red; */
+    }
+    p {
+        color: var(--color-accent)
+    }
 </style>

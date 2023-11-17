@@ -1,6 +1,8 @@
-- animate dice icon with spin on hover? On click/change?
+- remove / decide on Tangerine and other extra Google fonts
+- resize social and theme buttons/links to minimum 40x40px
 - Different icon for each theme? 1-6?
 - Add titles to button / click action (tooltip?)
+- add local cookie to remember theme setting, at least between page loads
 - fix a few coloring issues with the themes. And add 1 more theme?
 
 - Figure out formatting for Projects page, etc
