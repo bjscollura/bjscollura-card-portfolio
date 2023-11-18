@@ -67,6 +67,7 @@ h2 {
         "links";
         grid-template-rows: 2fr auto auto 5fr auto 5fr auto;
         height: 100vh;
+        height: 100svh;
         margin-inline-start: .6rem;
     }
     .brian {
@@ -129,6 +130,7 @@ h2 {
         grid-template-rows: auto 2fr auto auto 3fr auto .7fr;
         /* grid-template-columns: 1.6fr 1.6fr 1fr 1fr; */
         height: 100vh;
+        height: 100svh;
         margin-inline: .5rem;
     }
     .brian {

@@ -1,12 +1,11 @@
 <script>
     import Dice from "$lib/Dice.svelte";
     
+    let themeArray = ["BlueJean","Monokai","Coffee","LimeRickey","Nantucket"];
     let props = {
         displayNumber: 5,
-        themeName: "Nantucket"
+        themeName: themeArray[displayNumber - 1] //dice number is base-1
     };
-
-    let themeArray = ["BlueJean","Monokai","Coffee","LimeRickey","Nantucket"];
     function changeTheme() {
         let currentTheme = document.body.className;
         let randNum = Math.floor(Math.random() * themeArray.length);
