@@ -1,9 +1,9 @@
 :root {
-    --coffee-primary: #3D322C;
-    --coffee-second: #F2EAD3;
-    --coffee-second-1: #F5F5F5;
-    --coffee-second-2: #DFD7BF;
-    --coffee-accent: #99c296;
+    --coffeeleaf-primary: #3D322C;
+    --coffeeleaf-second: #F2EAD3;
+    --coffeeleaf-second-1: #F5F5F5;
+    --coffeeleaf-second-2: #DFD7BF;
+    --coffeeleaf-accent: #99c296;
     
     --monokai-primary: #272822;
     --monokai-second: #F8F8F2;
@@ -45,7 +45,8 @@ body {
     background-color: var(--color-bg, #ddd);
     color: var(--color-second, #333);
 }
-button {
+button,
+a.cta {
     display: inline-block;
     color: var(--color-bg);
     border: 1px solid var(--color-second);
@@ -62,7 +63,8 @@ button {
     -moz-appearance: none;
     appearance: none;
 }
-button.icon {
+.icon {
+    display: inline-block;
     border: none;
     margin: 0;
     padding: 0;
@@ -74,9 +76,6 @@ button.icon {
     -moz-appearance: none;
     appearance: none;
     color: var(--color-second)
-}
-.icon {
-    font-family: ;
 }
 .theme-bluejean {
     --color-bg: var(--bluejean-primary);
@@ -92,12 +91,12 @@ button.icon {
     --color-second-1: var(--monokai-second-1);
     --color-second-2: var(--monokai-second-2);
 }
-.theme-coffee {
-    --color-bg: var(--coffee-primary);
-    --color-accent: var(--coffee-accent);
-    --color-second: var(--coffee-second);
-    --color-second-1: var(--coffee-second-1);
-    --color-second-2: var(--coffee-second-2);
+.theme-coffeeleaf {
+    --color-bg: var(--coffeeleaf-primary);
+    --color-accent: var(--coffeeleaf-accent);
+    --color-second: var(--coffeeleaf-second);
+    --color-second-1: var(--coffeeleaf-second-1);
+    --color-second-2: var(--coffeeleaf-second-2);
 }
 .theme-limerickey {
     --color-bg: var(--limerickey-primary);

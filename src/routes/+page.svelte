@@ -1,10 +1,13 @@
 <script>
     import ThemePicker from "$lib/ThemePicker.svelte";
+    
+    let pageHeight, pageWidth;
 </script>
 
 <svelte:head>
     <title>Brian Collura</title>
 </svelte:head>
+<svelte:window bind:innerHeight={pageHeight} bind:innerWidth={pageWidth} />
 
 <div class="page-wrapper">
     <div class="brian">
@@ -27,20 +30,24 @@
     
     <div class="buttons">
     <!-- buttons -->
-        <button>Projects</button>
-        <button>About Me</button>
+        <a class='cta' href='/work'>Work</a>
+        <a class='cta' href='/about'>About Me</a>
     </div>
     
     <div class="links">
     <!-- social links and resume -->
-        <ThemePicker />
-        <button class='icon'>
+        {#if (pageWidth / pageHeight < 1)}
+            <ThemePicker labelSide="top"/>
+        {:else}
+            <ThemePicker labelSide="bottom"/>
+        {/if}
+        <a class='icon'>
             <i class="fab fa-linkedin-in fa-lg" />
-        </button>
-        <button class='icon'>
+        </a>
+        <a class='icon'>
             <i class="fab fa-github fa-lg" />
-        </button>
-        <button>Resume.pdf</button>
+        </a>
+        <a class='cta' href='#'>Resume.pdf</a>
     </div>
 </div>
 
@@ -85,7 +92,7 @@ h2 {
         width: min(50vw, 300px);
         margin: 0 auto;
     }
-    .buttons > button {
+    .buttons > * {
         width: 100%;
     }
     .links {
@@ -93,6 +100,7 @@ h2 {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         gap: 1rem;
         margin-block-end: 5px;
     }
@@ -149,7 +157,7 @@ h2 {
         margin-inline: auto;
         width: max(30vw, 332px);
     }
-    .buttons > button {
+    .buttons > * {
         width: 100%;
     }
     .links {
@@ -157,6 +165,7 @@ h2 {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        align-items: center;
         gap: 1rem;
         margin-block-start: 1rem;
         margin-inline-end: .5rem;
