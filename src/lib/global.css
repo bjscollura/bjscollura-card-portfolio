@@ -59,6 +59,7 @@ a.cta {
     text-align: center;
     cursor: pointer;
     outline: none;
+    text-underline-offset: 10%;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
