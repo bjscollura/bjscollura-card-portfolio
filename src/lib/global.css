@@ -64,6 +64,10 @@ a.cta {
     -moz-appearance: none;
     appearance: none;
 }
+a {
+    color: var(--color-accent);
+    text-underline-offset: 10%;
+}
 .icon {
     display: inline-block;
     border: none;
