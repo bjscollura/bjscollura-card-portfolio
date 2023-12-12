@@ -1,5 +1,5 @@
 <script>
-    export let size = 24;
+    export let size = 40;
     export let displayNumber = 5;
     export let themeName;
 </script>

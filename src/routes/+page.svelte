@@ -10,6 +10,23 @@
 <svelte:window bind:innerHeight={pageHeight} bind:innerWidth={pageWidth} />
 
 <div class="page-wrapper">
+    <header>
+    <!-- social links and resume -->
+        {#if (pageWidth / pageHeight < 1)}
+            <ThemePicker labelSide="top"/>
+        {:else}
+            <ThemePicker labelSide="bottom"/>
+        {/if}
+        <div class="iconlinks">
+            <a class='icon'>
+                <i class="fab fa-linkedin-in" />
+            </a>
+            <a class='icon'>
+                <i class="fab fa-github" />
+            </a>
+        </div>
+        <a class='cta' href='#'>Resume.pdf</a>
+    </header>
     <div class="brian">
         <div class="hero-text">
             <h1>
@@ -27,34 +44,37 @@
             </h2>
         </div>
     </div>
-    
-    <div class="buttons">
+    <nav>
     <!-- buttons -->
         <a class='cta' href='/work'>Work</a>
         <a class='cta' href='/about'>About Me</a>
-    </div>
-    
-    <div class="links">
-    <!-- social links and resume -->
-        {#if (pageWidth / pageHeight < 1)}
-            <ThemePicker labelSide="top"/>
-        {:else}
-            <ThemePicker labelSide="bottom"/>
-        {/if}
-        <a class='icon'>
-            <i class="fab fa-linkedin-in fa-lg" />
-        </a>
-        <a class='icon'>
-            <i class="fab fa-github fa-lg" />
-        </a>
-        <a class='cta' href='#'>Resume.pdf</a>
-    </div>
+    </nav>
 </div>
 
 <style>
 /* * {
     outline: 1px solid salmon;
 } */
+.page-wrapper {
+    display: grid;
+    height: 100vh; /* fallback */
+    height: 100svh;
+}
+.brian {
+    grid-area: brian;
+}
+.description {
+    grid-area: description;
+}
+.iconlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.hero-text {
+    font-family: 'Josefin Sans', sans-serif;
+}
 h1 {
     color: var(--color-second);
 }
@@ -63,7 +83,6 @@ h2 {
 }
 @media (orientation: portrait) {
     .page-wrapper {
-        display: grid;
         grid-template-areas:
         "."
         "brian"
@@ -73,17 +92,9 @@ h2 {
         "."
         "links";
         grid-template-rows: 2fr auto auto 5fr auto 5fr auto;
-        height: 100vh;
-        height: 100svh;
         margin-inline-start: .6rem;
     }
-    .brian {
-        grid-area: brian;
-    }
-    .description {
-        grid-area: description;
-    }
-    .buttons {
+    nav {
         grid-area: buttons;
         display: flex;
         flex-direction: column;
@@ -92,20 +103,19 @@ h2 {
         width: min(50vw, 300px);
         margin: 0 auto;
     }
-    .buttons > * {
+    nav > * {
         width: 100%;
     }
-    .links {
+    header {
         grid-area: links;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         margin-block-end: 5px;
     }
     .hero-text {
-        font-family: 'Josefin Sans', sans-serif;
         width: 1px;
         line-height: 14vmin;
     }
@@ -115,19 +125,10 @@ h2 {
     h2 {
         font-size: 12vmin;
     }
-    
 }
 @media (orientation: landscape) {
     .page-wrapper {
-        display: grid;
         grid-template-areas:
-        /* ". . links links"
-        ". . . ."
-        "brian brian . ."
-        "description description . ."
-        ". . . ."
-        ". buttons buttons ."
-        ". . . ."; */
         "links"
         "."
         "brian"
@@ -136,18 +137,9 @@ h2 {
         "buttons"
         ".";
         grid-template-rows: auto 2fr auto auto 3fr auto .7fr;
-        /* grid-template-columns: 1.6fr 1.6fr 1fr 1fr; */
-        height: 100vh;
-        height: 100svh;
         margin-inline: .5rem;
     }
-    .brian {
-        grid-area: brian;
-    }
-    .description {
-        grid-area: description;
-    }
-    .buttons {
+    nav {
         grid-area: buttons;
         display: flex;
         flex-direction: row;
@@ -157,16 +149,16 @@ h2 {
         margin-inline: auto;
         width: max(30vw, 332px);
     }
-    .buttons > * {
+    nav > * {
         width: 100%;
     }
-    .links {
+    header {
         grid-area: links;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         margin-block-start: 1rem;
         margin-inline-end: .5rem;
     }
@@ -184,5 +176,4 @@ h2 {
         font-size: min(100px, 5vmax);
     }
 }
-
 </style>

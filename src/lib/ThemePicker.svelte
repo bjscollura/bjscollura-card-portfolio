@@ -49,7 +49,7 @@
     {#if isLabelVisible}
         <div class="diceLabelWrapper" bind:this={diceLabelWrapperEl}>
             <div class="diceLabel {labelSide}">
-                {props.themeName}
+                Theme: {props.themeName}
             </div>
         </div>
     {/if}
@@ -60,6 +60,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        padding-top: .5rem;
         cursor: pointer;
     }
     p {
@@ -89,14 +91,17 @@
         left: -8px;
         padding: 0.5rem;
         border-radius: 7px;
+        
+        /* overflow-x: visible; */
+        min-width: max-content;
     }
     .diceLabel.bottom {
         top: 100%;
-        margin-top: 0.5rem;
+        margin-top: 0.75rem;
     }
     .diceLabel.top {
         bottom: 100%;
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.75rem;
     }
     .diceLabel::after {
         content: "";
