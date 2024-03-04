@@ -126,7 +126,7 @@
     .content-grid,
     .slot :global(.content-grid) {
         display: grid;
-        grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 25ch [content-end] 5fr [breakout-end] 8fr [full-end];
+        grid-template-columns: [full-start] 8fr [breakout-start content-start] 5fr [oldcontent-start] 30ch [oldcontent-end] 5fr [breakout-end content-end] 8fr [full-end];
     }
     .headerwrapper {
         margin-inline-start: .6rem;

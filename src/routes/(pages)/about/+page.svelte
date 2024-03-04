@@ -1,6 +1,7 @@
   <div class="content-grid">
-    <div class="content quote">
-      <h3>Brian Collura | Central Massachusetts</h3>
+    <div class="breakout quote">
+      <h3>Brian Collura</h3>
+      <h3>Central Massachusetts</h3>
       <p><a href="mailto:bjscollura@gmail.com" target="_blank">bjscollura@gmail.com</a></p>
       <blockquote>
         Yet none could better know than I, <br />
@@ -35,6 +36,9 @@
     text-align: center;
     padding-block: 1rem;
   }
+  blockquote {
+    min-width: 278px;
+  }
   .p-container {
     display: flex;
     flex-direction: column;
@@ -46,5 +50,8 @@
   }
   .p-container > p:last-of-type {
     margin-block-end: 3rem;
+  }
+  figure img {
+    width: 100%;
   }
 </style>
