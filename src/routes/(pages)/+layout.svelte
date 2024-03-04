@@ -66,30 +66,6 @@
         grid-template-areas: ". links";
         grid-template-columns: auto auto;
     }
-    @media (min-width: 451px) and (min-width: 835px) {   
-        .content-grid,
-        .slot :global(.content-grid) {
-            display: grid;
-            grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 40ch [content-end] 5fr [breakout-end] 8fr [full-end];
-        }
-        .headerwrapper {
-            margin-inline-start: .6rem;
-            grid-template-areas: ". links";
-            grid-template-columns: 1fr 3fr;
-        }
-    }
-    @media (max-width: 450px) {   
-        .content-grid,
-        .slot :global(.content-grid) {
-            display: grid;
-            grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 25ch [content-end] 5fr [breakout-end] 8fr [full-end];
-        }
-        .headerwrapper {
-            margin-inline-start: .6rem;
-            grid-template-areas: "links";
-            grid-template-columns: auto;
-        }
-    }
     :global(.centered) {
         display: flex;
         flex-direction: column;
@@ -127,24 +103,35 @@
         gap: 2rem;
         margin-block-end: 5px;
     }
-/* @media (orientation: portrait) {
-    .headerwrapper {
+@media (min-width: 451px) and (min-width: 835px) {   
+    .content-grid,
+    .slot :global(.content-grid) {
         display: grid;
+        grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 40ch [content-end] 5fr [breakout-end] 8fr [full-end];
+    }
+    .headerwrapper {
         margin-inline-start: .6rem;
-        grid-template-areas: ". links .";
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-areas: ". links";
+        grid-template-columns: 1fr 3fr;
     }
-} */
-/* @media (orientation: landscape) {
-    header {
-        grid-area: links;
-        display: flex;
-        flex-direction: row;
+}
+@media (max-width: 450px) {   
+    .content-grid,
+    .slot :global(.content-grid) {
+        display: grid;
+        grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 25ch [content-end] 5fr [breakout-end] 8fr [full-end];
+    }
+    .headerwrapper {
+        margin-inline-start: .6rem;
+        grid-template-areas: "links";
+        grid-template-columns: auto;
+    }
+    .icon {
+        width: 35px;
+    }
+    .iconlinks {
+        gap: .3rem;
         justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        margin-block-start: 1rem;
-        margin-inline-end: .5rem;
     }
-} */
+}
 </style>
