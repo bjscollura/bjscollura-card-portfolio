@@ -18,14 +18,14 @@
             <ThemePicker labelSide="bottom"/>
         {/if}
         <div class="iconlinks">
-            <a class='icon'>
+            <a class='icon' href="https://www.linkedin.com/in/bjscollura/" target="_blank">
                 <i class="fab fa-linkedin-in" />
             </a>
-            <a class='icon'>
+            <a class='icon' href="https://github.com/bjscollura" target="_blank">
                 <i class="fab fa-github" />
             </a>
         </div>
-        <a class='cta' href='#'>Resume.pdf</a>
+        <a class='cta' href='Resume_March2024_Recent.pdf' target="_blank">Resume.pdf</a>
     </header>
     <div class="brian">
         <div class="hero-text">

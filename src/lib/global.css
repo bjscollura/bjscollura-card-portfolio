@@ -29,6 +29,7 @@
     --limerickey-second-2: #b7dfb3;
     --limerickey-accent: #C9485B;
     
+    --radius: 7px;
 }
 
 * {
@@ -50,7 +51,7 @@ a.cta {
     display: inline-block;
     color: var(--color-bg);
     border: 1px solid var(--color-second);
-    border-radius: 7px;
+    border-radius: var(--radius);
     margin: 0;
     padding: .8rem 1.2rem;
     background: var(--color-second-2);
