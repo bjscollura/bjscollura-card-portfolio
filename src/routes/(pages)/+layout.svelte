@@ -59,6 +59,13 @@
     .slot :global(.content-grid .full) {
         grid-column: full;
     }
+    @media (max-width: 835px) {   
+        .content-grid,
+        .slot :global(.content-grid) {
+            display: grid;
+            grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 40ch [content-end] 5fr [breakout-end] 8fr [full-end];
+        }
+    }
     :global(.centered) {
         display: flex;
         flex-direction: column;
@@ -76,8 +83,8 @@
         display: grid;
         margin-inline-start: .6rem;
         margin-block-end: 1.8rem;
-        grid-template-areas: ". links .";
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-areas: ". links";
+        grid-template-columns: auto auto;
     }
     .sticky {
         position: sticky;
@@ -94,13 +101,6 @@
     .sticky + .slot {
         padding-top: 75px;
     }
-@media (orientation: portrait) {
-    /* .headerwrapper {
-        display: grid;
-        margin-inline-start: .6rem;
-        grid-template-areas: ". links .";
-        grid-template-columns: 1fr auto 1fr;
-    } */
     header {
         grid-area: links;
         display: flex;
@@ -110,8 +110,15 @@
         gap: 2rem;
         margin-block-end: 5px;
     }
-}
-@media (orientation: landscape) {
+/* @media (orientation: portrait) {
+    .headerwrapper {
+        display: grid;
+        margin-inline-start: .6rem;
+        grid-template-areas: ". links .";
+        grid-template-columns: 1fr auto 1fr;
+    }
+} */
+/* @media (orientation: landscape) {
     header {
         grid-area: links;
         display: flex;
@@ -122,5 +129,5 @@
         margin-block-start: 1rem;
         margin-inline-end: .5rem;
     }
-}
+} */
 </style>
