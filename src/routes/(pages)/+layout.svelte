@@ -10,7 +10,7 @@
 <div class="content-grid">
     <div class="full {(pageHeight > 600) ? 'sticky' : ''}">
         <div class="headerwrapper">
-            {#if ($page.url.pathname.search(urlregex) > -1)}
+            {#if ($page.url.pathname.search(urlregex) > -1) && (pageWidth > 450)}
                 <div class="back">
                     <a href="/work">&larr; Back</a>
                 </div>
@@ -59,11 +59,23 @@
     .slot :global(.content-grid .full) {
         grid-column: full;
     }
+    .headerwrapper {
+        display: grid;
+        margin-inline-start: .6rem;
+        margin-block-end: 1.8rem;
+        grid-template-areas: ". links";
+        grid-template-columns: auto auto;
+    }
     @media (min-width: 451px) and (min-width: 835px) {   
         .content-grid,
         .slot :global(.content-grid) {
             display: grid;
             grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 40ch [content-end] 5fr [breakout-end] 8fr [full-end];
+        }
+        .headerwrapper {
+            margin-inline-start: .6rem;
+            grid-template-areas: ". links";
+            grid-template-columns: 1fr 3fr;
         }
     }
     @media (max-width: 450px) {   
@@ -71,6 +83,11 @@
         .slot :global(.content-grid) {
             display: grid;
             grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 25ch [content-end] 5fr [breakout-end] 8fr [full-end];
+        }
+        .headerwrapper {
+            margin-inline-start: .6rem;
+            grid-template-areas: "links";
+            grid-template-columns: auto;
         }
     }
     :global(.centered) {
@@ -85,13 +102,6 @@
         flex-direction: row;
         justify-content: space-between;
         gap: 1.5rem;
-    }
-    .headerwrapper {
-        display: grid;
-        margin-inline-start: .6rem;
-        margin-block-end: 1.8rem;
-        grid-template-areas: ". links";
-        grid-template-columns: auto auto;
     }
     .sticky {
         position: sticky;
