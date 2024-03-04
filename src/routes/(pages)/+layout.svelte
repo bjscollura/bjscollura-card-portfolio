@@ -9,7 +9,7 @@
 
 <div class="content-grid">
     <div class="full {((pageWidth > 550) && (pageHeight > 600)) ? 'sticky' : ''}">
-        <div class="headerwrapper">
+        <div class="headerwrapper" style="margin-bottom:{(pageWidth < 550) ? 125 : 75}px;">
             {#if ($page.url.pathname.search(urlregex) > -1) && (pageWidth > 450)}
                 <div class="back">
                     <a href="/work">&larr; Back</a>
@@ -68,11 +68,10 @@
     .sticky {
         position: sticky;
         top: 0px;
-        background-color: var(--color-bg);
     }
-    .sticky + .slot {
-        padding-top: 75px;
-    }
+    /* .sticky + .slot {
+        padding-top: 115px;
+    } */
     /* .headerwrapper {
         display: grid;
         margin-inline-start: .6rem;
@@ -87,6 +86,7 @@
         justify-content: center;
         gap: 1.5rem;
         flex-wrap: wrap;
+        background-color: var(--color-bg);
     }
     .back {
         margin-inline-end: 2rem;
