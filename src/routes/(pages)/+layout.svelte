@@ -59,11 +59,18 @@
     .slot :global(.content-grid .full) {
         grid-column: full;
     }
-    @media (max-width: 835px) {   
+    @media (min-width: 451px) and (min-width: 835px) {   
         .content-grid,
         .slot :global(.content-grid) {
             display: grid;
             grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 40ch [content-end] 5fr [breakout-end] 8fr [full-end];
+        }
+    }
+    @media (max-width: 450px) {   
+        .content-grid,
+        .slot :global(.content-grid) {
+            display: grid;
+            grid-template-columns: [full-start] 8fr [breakout-start] 5fr [content-start] 25ch [content-end] 5fr [breakout-end] 8fr [full-end];
         }
     }
     :global(.centered) {
