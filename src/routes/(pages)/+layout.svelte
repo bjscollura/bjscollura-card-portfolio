@@ -8,7 +8,7 @@
 <svelte:window bind:innerHeight={pageHeight} bind:innerWidth={pageWidth} />
 
 <div class="content-grid">
-    <div class="full {(pageHeight > 600) ? 'sticky' : ''}">
+    <div class="full {((pageWidth > 550) && (pageHeight > 600)) ? 'sticky' : ''}">
         <div class="headerwrapper">
             {#if ($page.url.pathname.search(urlregex) > -1) && (pageWidth > 450)}
                 <div class="back">
