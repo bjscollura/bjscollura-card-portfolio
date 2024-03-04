@@ -29,8 +29,8 @@
                         <i class="fab fa-github" />
                     </a>
                 </div>
-                <a class='cta' href='/Resume_March2024_Recent.pdf' target="_blank">Resume.pdf</a>
             </header>
+            <a class='cta' href='/Resume_March2024_Recent.pdf' target="_blank">Resume.pdf</a>
         </div>
     </div>
     <div class='full slot'>
@@ -59,40 +59,47 @@
     .slot :global(.content-grid .full) {
         grid-column: full;
     }
-    .headerwrapper {
-        display: grid;
-        margin-inline-start: .6rem;
-        margin-block-end: 1.8rem;
-        grid-template-areas: ". links";
-        grid-template-columns: auto auto;
-    }
     :global(.centered) {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
-    .iconlinks {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 1.5rem;
-    }
     .sticky {
         position: sticky;
         top: 0px;
         background-color: var(--color-bg);
     }
+    .sticky + .slot {
+        padding-top: 75px;
+    }
+    /* .headerwrapper {
+        display: grid;
+        margin-inline-start: .6rem;
+        margin-block-end: 1.8rem;
+        grid-template-areas: ". links";
+        grid-template-columns: auto auto;
+    } */
+    .headerwrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
     .back {
-        /* margin-block-end: 2rem; */
+        margin-inline-end: 2rem;
         /* height: 2rem; */
         /* width: 100%; */
         align-self: center;
         justify-self: center;
     }
-    .sticky + .slot {
-        padding-top: 75px;
+    .iconlinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1.5rem;
     }
     header {
         grid-area: links;
@@ -103,7 +110,7 @@
         gap: 2rem;
         margin-block-end: 5px;
     }
-@media (min-width: 451px) and (min-width: 835px) {   
+@media (min-width: 451px) and (max-width: 835px) {   
     .content-grid,
     .slot :global(.content-grid) {
         display: grid;
@@ -126,12 +133,12 @@
         grid-template-areas: "links";
         grid-template-columns: auto;
     }
-    .icon {
+    /* .icon {
         width: 35px;
     }
     .iconlinks {
         gap: .3rem;
         justify-content: center;
-    }
+    } */
 }
 </style>
