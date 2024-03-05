@@ -24,10 +24,16 @@
     --nantucket-accent: #FF5959;
     
     --limerickey-primary: #F7FFE5;
-    --limerickey-second: #A0C49D;
-    --limerickey-second-1: #536251;
-    --limerickey-second-2: #b7dfb3;
-    --limerickey-accent: #C9485B;
+    --limerickey-second: #436b43;
+    --limerickey-second-1: #b7dfb3;
+    --limerickey-second-2: #6eac68;
+    --limerickey-accent: #e46578;
+    
+    --bunnyrose-primary: #f7ede7;
+    --bunnyrose-second: #4f4f4f;
+    --bunnyrose-second-1: #eabfb9;
+    --bunnyrose-second-2: #463c41;
+    --bunnyrose-accent: #c54a6d;
     
     --radius: 7px;
 }
@@ -120,4 +126,11 @@ a {
     --color-second: var(--nantucket-second);
     --color-second-1: var(--nantucket-second-1);
     --color-second-2: var(--nantucket-second-2);
+}
+.theme-bunnyrose {
+    --color-bg: var(--bunnyrose-primary);
+    --color-accent: var(--bunnyrose-accent);
+    --color-second: var(--bunnyrose-second);
+    --color-second-1: var(--bunnyrose-second-1);
+    --color-second-2: var(--bunnyrose-second-2);
 }

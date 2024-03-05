@@ -3,28 +3,35 @@
     
     export let labelSide = 'bottom';
     
-    let themeArray = ["BlueJean","Monokai","CoffeeLeaf","LimeRickey","Nantucket"];
+    let themeArray = ["BlueJean","Monokai","CoffeeLeaf","LimeRickey","Nantucket","BunnyRose"];
+    let tempThemeArray = themeArray.slice(1);
     let props = {
-        displayNumber: 5,
-        themeName: themeArray[4] //dice number is base-1
+        displayNumber: 1,
+        themeName: themeArray[0] //dice number is base-1
     };
     let diceLabelWrapperEl;
     let isLabelVisible = false;
     let labelTimeoutID;
     
     function changeTheme() {
+        console.log(tempThemeArray);
         let currentTheme = document.body.className;
-        let randNum = Math.floor(Math.random() * themeArray.length);
-        let newTheme = `theme-${(themeArray[randNum]).toLowerCase()}`;
-        while (currentTheme === newTheme) {
-            randNum = Math.floor(Math.random() * themeArray.length);
-            newTheme = `theme-${(themeArray[randNum]).toLowerCase()}`;
+        let randNum = Math.floor(Math.random() * tempThemeArray.length);
+        let newTheme = tempThemeArray[randNum];
+        let newThemeName = `theme-${newTheme.toLowerCase()}`;
+        tempThemeArray = tempThemeArray.filter( (val, ii) => newTheme !== val );
+        if (!tempThemeArray.length) {
+            tempThemeArray = themeArray.filter(val => newTheme !== val);
         }
+        // while (currentTheme === newThemeName) {
+        //     randNum = Math.floor(Math.random() * themeArray.length);
+        //     newThemeName = `theme-${(themeArray[randNum]).toLowerCase()}`;
+        // }
         document.body.className = '';
-        document.body.classList.add(newTheme);
+        document.body.classList.add(newThemeName);
         
-        props.displayNumber = randNum + 1; //change number for Dice.svelte to display, base 1 vs base 0
-        props.themeName = themeArray[randNum];
+        props.displayNumber = themeArray.indexOf(newTheme) + 1; //change number for Dice.svelte to display, base 1 vs base 0
+        props.themeName = newTheme;
         
         //Label
         window.clearTimeout(labelTimeoutID); //reset timout from previous clicks within 2s
@@ -35,8 +42,8 @@
         // if (isLabelVisible) { diceLabelWrapperEl.style.animationPlayState = 'paused' }
         labelTimeoutID = window.setTimeout(() => {
             isLabelVisible = false;
-            console.log('time!');
         }, 2000);
+        console.log(` - ${tempThemeArray} --- ${props.displayNumber}`);
     }
 </script>
 
