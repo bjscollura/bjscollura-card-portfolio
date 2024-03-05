@@ -1,10 +1,13 @@
 <script>
     import Dice from "$lib/Dice.svelte";
+    import { theme } from "./LocalStore";
+    import { browser } from "$app/environment";
+    import { onMount } from "svelte";
     
     export let labelSide = 'bottom';
     
     let themeArray = ["BlueJean","Monokai","CoffeeLeaf","LimeRickey","Nantucket","BunnyRose"];
-    let tempThemeArray = themeArray.slice(1);
+    let tempThemeArray = themeArray.slice(0);
     let props = {
         displayNumber: 1,
         themeName: themeArray[0] //dice number is base-1
@@ -13,12 +16,22 @@
     let isLabelVisible = false;
     let labelTimeoutID;
     
+    onMount(() => {
+        let storedTheme = localStorage.getItem('theme'); 
+        let startTheme = (themeArray.indexOf(storedTheme) >= 0) ? storedTheme : themeArray[0];
+        document.body.classList.add(`theme-${startTheme.toLowerCase()}`);
+        
+        tempThemeArray = themeArray.filter(val => val !== startTheme);
+        props.themeName = startTheme;
+        props.displayNumber = themeArray.indexOf(startTheme) + 1;
+    });
+    
     function changeTheme() {
-        console.log(tempThemeArray);
         let currentTheme = document.body.className;
         let randNum = Math.floor(Math.random() * tempThemeArray.length);
         let newTheme = tempThemeArray[randNum];
         let newThemeName = `theme-${newTheme.toLowerCase()}`;
+        localStorage.setItem("theme", newTheme); //local cookie
         tempThemeArray = tempThemeArray.filter( (val, ii) => newTheme !== val );
         if (!tempThemeArray.length) {
             tempThemeArray = themeArray.filter(val => newTheme !== val);
@@ -43,7 +56,6 @@
         labelTimeoutID = window.setTimeout(() => {
             isLabelVisible = false;
         }, 2000);
-        console.log(` - ${tempThemeArray} --- ${props.displayNumber}`);
     }
 </script>
 
