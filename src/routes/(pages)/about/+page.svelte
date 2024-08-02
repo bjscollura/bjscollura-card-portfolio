@@ -1,7 +1,11 @@
   <div class="content-grid">
     <div class="breakout quote">
+      <figure>
+        <img src="/images/AboutMe_Pic.jpg" alt="Brian, looking as handsome as he can.">
+        <figcaption></figcaption>
+      </figure>
       <h3>Brian Collura</h3>
-      <h3>Central Massachusetts</h3>
+      <h3>Maine, USA</h3>
       <p><a href="mailto:bjscollura@gmail.com" target="_blank">bjscollura@gmail.com</a></p>
       <blockquote>
         Yet none could better know than I, <br />
@@ -17,10 +21,6 @@
         <p>Thanks for taking the time! I’m Brian - I’m a User Experience Designer, a Web Developer, and an IT Engineer. Over the last 10 years, I’ve seen Full Stack development replace traditional web teams, I’ve watched BDD and DevOps automation commoditize the workflow, and I’ve helped implement frameworks and SaaS suites for my Applications teams as they came in and out of vogue. <strong>The pace of change has been rapid</strong>.</p>
         <p>But I’m also a Social Psychologist and a Customer Service Professional. While these burgeoning web technologies were made by brilliant and well-intentioned technologists, they don’t always allow coders to anticipate customer confusions and needs, testing <strong>user BEHAVIORS instead of user INTENTIONS</strong>. Meanwhile, these bigger-picture issues are more frequently being hunted down by code and AI, rather than human eyes.</p>
         <p>My skillset, my passion, and my primary aggravation are all the same - <strong>integrate customer service back into automated experiences.</strong> Someday, when we the consumers have the same control over our tech as we do our hammers and nails, I will be content with the world I’ve helped leave for the rest of us.</p>
-        <figure>
-          <img src="/images/AboutMe_Pic.jpg" alt="Brian, looking as handsome as he can.">
-          <figcaption></figcaption>
-        </figure>
       </div>
     </div>
   </div>
@@ -53,5 +53,6 @@
   }
   figure img {
     width: 100%;
+    max-width: 278px;
   }
 </style>
