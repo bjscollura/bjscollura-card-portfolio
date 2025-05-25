@@ -93,6 +93,7 @@ h2 {
         "links";
         grid-template-rows: 2fr auto auto 5fr auto 5fr auto;
         margin-inline-start: .6rem;
+        padding-block-start: 1svh
     }
     nav {
         grid-area: buttons;
@@ -137,7 +138,7 @@ h2 {
         "buttons"
         ".";
         grid-template-rows: auto 2fr auto auto 3fr auto .7fr;
-        margin-inline: .5rem;
+        margin-inline: 1vw;
     }
     nav {
         grid-area: buttons;
